@@ -16,7 +16,8 @@
 ## Queue: 
 |      Topic            |     Status    |
 |:---------------------:|--------------:|
-|Deque using List       |      TODO     |
+|Deque using List 1     |      Done     |
+|Deque using List 2     |      Done     |
 |Deque using Linked List|      TODO     |
 |Queue using List 1     |      Done     |
 |Queue using List 2     |      Done     |

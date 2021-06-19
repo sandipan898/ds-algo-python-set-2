@@ -4,12 +4,16 @@ class Deque:
         self.data_count = 0
         self.max_size = max_size
         self.front = -1
-        self.rear = 0
+        self.rear = -1
 
     def is_empty(self):
         return self.data_count == 0
     
     def is_full(self):
+        # if (self.front == self.rear+1) or (self.front == 0 and self.rear == self.max_size-1):
+        #     return True
+        # else:
+        #     return False
         return self.data_count == self.max_size
     
     def add_rear(self, data):
@@ -22,6 +26,7 @@ class Deque:
             self.rear = 0
         else:
             self.rear += 1
+        # OR, self.rear = (self.rear + 1)%self.max_size
         print("Adding Rear", data, "at index", self.rear)
         self.data[self.rear] = data
         self.data_count += 1
