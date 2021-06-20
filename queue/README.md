@@ -12,5 +12,7 @@ In addition to above operations, following operations are also supported
 - isFull(): Checks whether Deque is full or not. 
 
 ### Material:
-- https://www.programiz.com/dsa/deque
-- https://www.geeksforgeeks.org/implementation-deque-using-circular-array/
+- Deque:
+    - https://www.programiz.com/dsa/deque
+    - https://www.geeksforgeeks.org/implementation-deque-using-circular-array/
+    - https://www.geeksforgeeks.org/implementation-deque-using-doubly-linked-list/
