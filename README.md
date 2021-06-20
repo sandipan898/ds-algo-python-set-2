@@ -23,6 +23,9 @@
 |Queue using List 2              |      Done     |
 |Queue using LinkedList          |      Done     |
 |Queue using Circular LinkedList |      Done     |
+|Priority Queue                  |      TODO     |
+### Learning Resources:
+[Click Here](/queue/)
 
 ## Tree:
 
