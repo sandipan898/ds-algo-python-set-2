@@ -30,9 +30,9 @@ class BinaryTree:
     def traverse_postorder(self, root): 
         if root:
             if root.left:
-                self.traverse_inorder(root.left)
+                self.traverse_postorder(root.left)
             if root.right:
-                self.traverse_inorder(root.right)
+                self.traverse_postorder(root.right)
             print(root.data, end=" ")
 
     def get_height(self, root):
@@ -57,6 +57,7 @@ tree.root.left.right = Node(5)
 
 tree.root.right.left = Node(6)
 tree.root.right.right = Node(7)
+
 print("Height", tree.get_height(tree.root))
 print("Preorder")
 tree.traverse_preorder(tree.root)
