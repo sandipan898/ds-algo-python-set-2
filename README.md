@@ -28,6 +28,15 @@
 [Click Here](/queue/)
 
 ## Tree:
+|      Topic                     |     Status    |
+|:------------------------------:|--------------:|
+|Bnary Tree                      |      Done     |
+|Full Bnary Tree                 |      Done     |
+|Perfect Bnary Tree              |      Done     |
+|Complete Bnary Tree             |      Done     |
+|Balanced Bnary Tree             |      Done     |
+|Bnary Search Tree               |      Done     |
+|AVL Tree                        |      TODO     |
 
 ## Graph:
 
