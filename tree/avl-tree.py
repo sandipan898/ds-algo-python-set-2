@@ -56,54 +56,50 @@ class AVLTree:
         return root
 
     def delete(self, root, data):
-        if root is None:
-            return None
-        print(root.data)
-        if data > root.data:
-            root.right = self.delete(root.right, data)
+        if not root:
+            return root
         elif data < root.data:
             root.left = self.delete(root.left, data)
-        
+        elif data > root.data:
+            root.right = self.delete(root.right, data)
         else:
             if root.left is None:
-                return root.right
+                temp = root.right
+                root = None
+                return temp
             elif root.right is None:
-                return root.left
-
-        print(root.data)
-
-        min_node = self.get_min_value_node(root.right)
-        root.data = min_node.data
-        root.right = self.delete(root.right, min_node.data)
-        print(root.data)
+                temp = root.left
+                root = None
+                return temp        
+            else:
+                min_val_node = self.get_min_value_node(root.right)
+                root.data = min_val_node.data
+                root.right = self.delete(root.right, min_val_node.data)
 
         if root is None:
             return None
-
         root.height = 1 + max(self.get_height(root.left), self.get_height(root.right))
         bf = self.get_balance_factor(root)
         
-        print(bf, root.data)
         if bf > 1:
             left_bf = self.get_balance_factor(root.left)
             # Left Left Case
-            if self.get_balance_factor(root.left) >= 0:
+            if left_bf >= 0:
                 return self.rotate_right(root)
             # Left Right Case
-            if self.get_balance_factor(root.left) < 0:
+            if left_bf < 0:
                 root.left = self.rotate_left(root.left)
                 return self.rotate_right(root)
 
         if bf < -1:
             right_bf = self.get_balance_factor(root.right)
             # Right Left Case
-            if self.get_balance_factor(root.right) >= 0:
+            if right_bf > 0:
                 root.right = self.rotate_right(root.right)
                 return self.rotate_left(root)
             # Right Right Case
-            if self.get_balance_factor(root.right) < 0:
+            if right_bf <= 0:
                 return self.rotate_left(root)
-
         return root
 
     def rotate_left(self, root):
