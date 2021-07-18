@@ -6,12 +6,16 @@
 |Doubly LinkedList             |      Done     |
 |Circular LinkedList           |      Done     |
 |Doubly Circular LinkedList    |      Done     |
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/linked-list)
 
 ## Stack:
 |      Topic            |     Status    |
 |:---------------------:|--------------:|
 |Stack using List       |      Done     |
 |Stack using LinkedList |      Done     |
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/stack)
 
 ## Queue: 
 |      Topic                     |     Status    |
@@ -26,6 +30,16 @@
 |Priority Queue                  |      TODO     |
 ### Learning Resources:
 [Click Here](/queue/)
+[Click Here](https://www.programiz.com/dsa/queue)
+
+
+## Heap:
+|      Topic            |     Status    |
+|:---------------------:|--------------:|
+|Max Heap               |      Done     |
+|Min Heap               |      Done     |
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/heap-data-structure)
 
 ## Tree:
 |      Topic                     |     Status    |
@@ -37,6 +51,8 @@
 |Balanced Bnary Tree             |      Done     |
 |Bnary Search Tree               |      Done     |
 |AVL Tree                        |      TODO     |
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/trees)
 
 ## Graph:
 
