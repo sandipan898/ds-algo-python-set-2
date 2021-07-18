@@ -55,4 +55,10 @@
 [Click Here](https://www.programiz.com/dsa/trees)
 
 ## Graph:
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/graph)
+
+## Hash Table:
+### Learning Resources:
+[Click Here](https://www.programiz.com/dsa/hash-table)
 
