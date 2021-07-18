@@ -50,7 +50,7 @@
 |Complete Bnary Tree             |      Done     |
 |Balanced Bnary Tree             |      Done     |
 |Bnary Search Tree               |      Done     |
-|AVL Tree                        |      TODO     |
+|AVL Tree                        |      Done     |
 ### Learning Resources:
 [Click Here](https://www.programiz.com/dsa/trees)
 
