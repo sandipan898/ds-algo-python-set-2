@@ -41,8 +41,39 @@ class Graph:
     #     node.next = self.vertex_list[d]
     #     self.vertex_list[d] = node
 
+    def remove_edge(self, u, v):
+        if self.vertex_list[u] is None or self.vertex_list[u] is None or u == v:
+            print("Edge between {} and {} does not exists!".format(u, v))
+            return
+            
+        if self.vertex_list[u].next.next is None:
+            self.vertex_list[u] = None
+        else:
+            temp = self.vertex_list[u]
+            while temp:
+                if temp.next.data == v:
+                    break
+                temp = temp.next
+            if temp:
+                temp.next = temp.next.next
+            else:
+                print("Edge {} not found!".format(v))
+    
+        if self.vertex_list[v].next.next is None:
+            self.vertex_list[v] = None
+        else:
+            temp = self.vertex_list[v]
+            while temp:
+                if temp.next.data == u:
+                    break
+                temp = temp.next
+            if temp:
+                temp.next = temp.next.next
+            else:
+                print("Edge {} not found!".format(u))
+
     def print_graph(self):
-        print("\nN")
+        print("V")
         for i in range(self.size):
             temp = self.vertex_list[i]
             while temp:
@@ -58,5 +89,10 @@ if __name__ == "__main__":
     graph.add_edge(0, 2)
     graph.add_edge(0, 3)
     graph.add_edge(1, 2)
-
+    graph.print_graph()
+    graph.remove_edge(0, 3)
+    graph.remove_edge(0, 0)
+    graph.remove_edge(3, 2)
+    graph.print_graph()
+    graph.remove_edge(2, 1)
     graph.print_graph()
