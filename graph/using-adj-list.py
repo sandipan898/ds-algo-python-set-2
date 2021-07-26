@@ -84,6 +84,7 @@ class Graph:
     def find_all_adjacent(self, u):
         if self.vertex_list[u] != None:
             temp = self.vertex_list[u]
+            # print("Vertices adjacent to {} are: ".format(u))
             while temp:
                 print("{} --> ".format(temp.data), end="") 
                 temp = temp.next

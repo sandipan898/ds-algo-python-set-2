@@ -15,6 +15,19 @@ class Graph:
         self.adj_matrix[u][v] = 0
         self.adj_matrix[v][u] = 0
     
+    def find_adjacency(self, u, v):
+        if self.adj_matrix[u][v] == 1:
+            return True
+        return False
+
+    def find_all_adjacent(self, u):
+        row = self.adj_matrix[u]
+        print("Vertices adjacent to {} are: ".format(u))
+        for i in range(len(row)):
+            if self.adj_matrix[u][i] == 1:
+                print(i, end=" ")
+        print()
+    
     def __len__(self):
         return self.size
     
@@ -33,6 +46,14 @@ if __name__ == '__main__':
     graph.add_edge(1, 2)
     graph.add_edge(2, 3)
     graph.print_matrix()
+
+    if graph.find_adjacency(1, 2):
+        print("Adjacent!\n")
+    else:
+        print("Not Adjacent!\n")
     graph.remove_edge(2, 3)
     print("\nAfter removing edge ({}, {})".format(2, 3))
     graph.print_matrix()
+    graph.find_all_adjacent(3)
+    graph.find_all_adjacent(1)
+    graph.find_all_adjacent(0)
