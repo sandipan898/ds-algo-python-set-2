@@ -72,6 +72,24 @@ class Graph:
             else:
                 print("Edge {} not found!".format(u))
 
+    def find_adjacency(self, u, v):
+        if self.vertex_list[u] != None:
+            temp = self.vertex_list[u]
+            while temp:
+                if temp.data == v:
+                    return True
+                temp = temp.next
+        return False
+    
+    def find_all_adjacent(self, u):
+        if self.vertex_list[u] != None:
+            temp = self.vertex_list[u]
+            while temp:
+                print("{} --> ".format(temp.data), end="") 
+                temp = temp.next
+        else:
+            print("Vertex doesn't exists")
+
     def print_graph(self):
         print("V")
         for i in range(self.size):
@@ -80,6 +98,7 @@ class Graph:
                 print("{} --> ".format(temp.data), end="")
                 temp = temp.next
             print()
+
 
 if __name__ == "__main__":
     V = 5
@@ -90,9 +109,22 @@ if __name__ == "__main__":
     graph.add_edge(0, 3)
     graph.add_edge(1, 2)
     graph.print_graph()
+    
+    if graph.find_adjacency(1, 2):
+        print("Adjacent!\n")
+    else:
+        print("Not Adjacent!\n")
+    
     graph.remove_edge(0, 3)
     graph.remove_edge(0, 0)
     graph.remove_edge(3, 2)
     graph.print_graph()
     graph.remove_edge(2, 1)
     graph.print_graph()
+
+    if graph.find_adjacency(1, 2):
+        print("Adjacent!")
+    else:
+        print("Not Adjacent!")
+
+    graph.find_all_adjacent(0)
