@@ -33,35 +33,23 @@ class Graph:
             while temp.next:
                 temp = temp.next
             temp.next = dest
-    
-    def add_to_stack(self, v):
-        temp = self.adj_list[v].next
-        while temp:
-            self.stack.insert(0, temp.data)
-            temp = temp.next
-        print("Current Stack: ", self.stack)
-    
-    # def DFS(self, v):
-    #     self.visited[v] = True
-    #     # self.add_to_stack(v)
-    #     print(v)
-    #     temp = self.adj_list[v].next
-    #     while temp:
-    #         adj = temp
-    #         if not self.visited[adj.data]: 
-    #             self.DFS(adj)
-    #             temp = temp.next
 
     def DFS(self, v):
         self.visited[v] = True
-        print(v)
-        self.add_to_stack(v)
-        adj = self.stack.pop(0)
-        print("Adjacent: ", adj)
-        # print(self.visited)
-        if not self.visited[adj]:
-            self.DFS(adj)
-
+        print(v, end=" ")
+        temp = self.adj_list[v].next
+        while temp:
+            adj = temp.data
+            if not self.visited[adj]:
+                self.DFS(adj)
+            temp = temp.next
+    
+    def DFS_disconnected(self, v):
+        self.visited = [False]*self.size
+        for vertex in self.adj_list:
+            if not self.visited[vertex.data]:
+                self.DFS(vertex.data)
+            
     def display_list(self):
         for i in self.adj_list:
             temp = i
@@ -71,11 +59,15 @@ class Graph:
             print()
 
 if __name__ == '__main__':
-    graph = Graph(6)
+    graph = Graph(7)
     graph.add_edge(0, 1)
     graph.add_edge(0, 2)
     graph.add_edge(1, 2)
-    graph.add_edge(2, 0)
+    graph.add_edge(1, 4)
     graph.add_edge(2, 3)
+    graph.add_edge(3, 0)
+    graph.add_edge(5, 6)
     graph.display_list()
-    graph.DFS(2)
+    graph.DFS(1)
+    print()
+    graph.DFS_disconnected(1)
